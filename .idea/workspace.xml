@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fc287bdf-b2a7-47db-986b-82fdc7493875" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/README.md" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/example/main.go" afterPath="$PROJECT_DIR$/example/main.go" />
+      <change beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -50,7 +47,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.go" pinned="false" current-in-tab="true">
+      <file leaf-file-name="main.go" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/example/main.go">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="248">
@@ -62,19 +59,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="1209">
-                <caret line="44" column="14" lean-forward="true" selection-start-line="44" selection-start-column="14" selection-end-line="44" selection-end-column="14" />
+              <first_editor relative-caret-position="310">
+                <caret line="15" column="12" lean-forward="true" selection-start-line="15" selection-start-column="12" selection-end-line="15" selection-end-column="12" />
                 <folding>
-                  <marker date="1521515501607" expanded="false" signature="56:114" ph="..." />
-                  <marker date="1521515501607" expanded="true" signature="127:844" ph="{...}" />
-                  <marker date="1521515501607" expanded="true" signature="336:368" ph="{...}" />
-                  <marker date="1521515501607" expanded="true" signature="549:581" ph="{...}" />
-                  <marker date="1521515501607" expanded="true" signature="731:763" ph="{...}" />
-                  <marker date="1521515501607" expanded="true" signature="782:817" ph="{...}" />
+                  <marker date="1521515640214" expanded="false" signature="79:137" ph="..." />
+                  <marker date="1521515640214" expanded="true" signature="150:867" ph="{...}" />
+                  <marker date="1521515640214" expanded="true" signature="359:391" ph="{...}" />
+                  <marker date="1521515640214" expanded="true" signature="572:604" ph="{...}" />
+                  <marker date="1521515640214" expanded="true" signature="754:786" ph="{...}" />
+                  <marker date="1521515640214" expanded="true" signature="805:840" ph="{...}" />
                 </folding>
               </first_editor>
               <second_editor />
@@ -121,7 +118,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="666" />
     <option name="y" value="71" />
     <option name="width" value="1040" />
@@ -268,7 +265,7 @@
     </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-4" y="-4" width="1928" height="1048" extended-state="7" />
+    <frame x="-4" y="-4" width="1928" height="1048" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -347,24 +344,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="1209">
-            <caret line="44" column="14" lean-forward="true" selection-start-line="44" selection-start-column="14" selection-end-line="44" selection-end-column="14" />
-            <folding>
-              <marker date="1521515501607" expanded="false" signature="56:114" ph="..." />
-              <marker date="1521515501607" expanded="true" signature="127:844" ph="{...}" />
-              <marker date="1521515501607" expanded="true" signature="336:368" ph="{...}" />
-              <marker date="1521515501607" expanded="true" signature="549:581" ph="{...}" />
-              <marker date="1521515501607" expanded="true" signature="731:763" ph="{...}" />
-              <marker date="1521515501607" expanded="true" signature="782:817" ph="{...}" />
-            </folding>
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/example/main.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="248">
@@ -372,6 +351,24 @@
           <folding>
             <element signature="e#14#79#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="310">
+            <caret line="15" column="12" lean-forward="true" selection-start-line="15" selection-start-column="12" selection-end-line="15" selection-end-column="12" />
+            <folding>
+              <marker date="1521515640214" expanded="false" signature="79:137" ph="..." />
+              <marker date="1521515640214" expanded="true" signature="150:867" ph="{...}" />
+              <marker date="1521515640214" expanded="true" signature="359:391" ph="{...}" />
+              <marker date="1521515640214" expanded="true" signature="572:604" ph="{...}" />
+              <marker date="1521515640214" expanded="true" signature="754:786" ph="{...}" />
+              <marker date="1521515640214" expanded="true" signature="805:840" ph="{...}" />
+            </folding>
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>
