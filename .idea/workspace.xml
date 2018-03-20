@@ -63,15 +63,15 @@
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="310">
-                <caret line="15" column="12" lean-forward="true" selection-start-line="15" selection-start-column="12" selection-end-line="15" selection-end-column="12" />
+              <first_editor relative-caret-position="217">
+                <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
                 <folding>
-                  <marker date="1521515640214" expanded="false" signature="79:137" ph="..." />
-                  <marker date="1521515640214" expanded="true" signature="150:867" ph="{...}" />
-                  <marker date="1521515640214" expanded="true" signature="359:391" ph="{...}" />
-                  <marker date="1521515640214" expanded="true" signature="572:604" ph="{...}" />
-                  <marker date="1521515640214" expanded="true" signature="754:786" ph="{...}" />
-                  <marker date="1521515640214" expanded="true" signature="805:840" ph="{...}" />
+                  <marker date="1521515694534" expanded="false" signature="76:134" ph="..." />
+                  <marker date="1521515694534" expanded="true" signature="147:864" ph="{...}" />
+                  <marker date="1521515694534" expanded="true" signature="356:388" ph="{...}" />
+                  <marker date="1521515694534" expanded="true" signature="569:601" ph="{...}" />
+                  <marker date="1521515694534" expanded="true" signature="751:783" ph="{...}" />
+                  <marker date="1521515694534" expanded="true" signature="802:837" ph="{...}" />
                 </folding>
               </first_editor>
               <second_editor />
@@ -357,15 +357,15 @@
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="310">
-            <caret line="15" column="12" lean-forward="true" selection-start-line="15" selection-start-column="12" selection-end-line="15" selection-end-column="12" />
+          <first_editor relative-caret-position="217">
+            <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
             <folding>
-              <marker date="1521515640214" expanded="false" signature="79:137" ph="..." />
-              <marker date="1521515640214" expanded="true" signature="150:867" ph="{...}" />
-              <marker date="1521515640214" expanded="true" signature="359:391" ph="{...}" />
-              <marker date="1521515640214" expanded="true" signature="572:604" ph="{...}" />
-              <marker date="1521515640214" expanded="true" signature="754:786" ph="{...}" />
-              <marker date="1521515640214" expanded="true" signature="805:840" ph="{...}" />
+              <marker date="1521515694534" expanded="false" signature="76:134" ph="..." />
+              <marker date="1521515694534" expanded="true" signature="147:864" ph="{...}" />
+              <marker date="1521515694534" expanded="true" signature="356:388" ph="{...}" />
+              <marker date="1521515694534" expanded="true" signature="569:601" ph="{...}" />
+              <marker date="1521515694534" expanded="true" signature="751:783" ph="{...}" />
+              <marker date="1521515694534" expanded="true" signature="802:837" ph="{...}" />
             </folding>
           </first_editor>
           <second_editor />

@@ -1,7 +1,7 @@
 JWT(JAVA WEB TOKEN)
-<p>
-目前只支持HS256加密！
-</p>
+
+**目前只支持HS256加密！**
+
 Example:
 ```go
 package main
