@@ -12,11 +12,13 @@ func main(){
 	//获取jwt令牌
 	token :=jwt.GetToken()
 	token.AddHeader("typ", "JWT").AddHeader("alg", "HS256")
-	exp,err := time.Parse("2006-01-02 15:04:05","2018-03-20 10:59:44")
-	if err!=nil {
-		fmt.Println(err)
-		return
-	}
+	//exp,err := time.Parse("2006-01-02 15:04:05","2018-03-20 10:59:44")
+	//if err!=nil {
+	//	fmt.Println(err)
+	//	return
+	//}
+	exp :=time.Now().Add(2*time.Hour)
+
 	token.AddPayLoad("exp",strconv.FormatInt(exp.Unix(),10))
 	jwt,_,err:=token.JwtGenerator(secret)
 	fmt.Println("签名是:",jwt)

@@ -32,8 +32,14 @@ func (token *Token) AddHeader(key string,value string) *Token{
 	return token
 }
 
+
+//如果没设置失效，会默认设置一小时的有效期
 func (token *Token)JwtGenerator(secretKey string) (jwtResult string,HS256Result string,errorThrow error){
 	//1.加密载荷
+	if token.payLoad["exp"]==""{
+		exp := time.Now().Add(1*time.Hour).Unix()
+		token.AddPayLoad("exp", strconv.FormatInt(exp, 10))
+	}
 	payLoad := token.payLoad
 	payLoadJson,err := json.Marshal(payLoad)
 	if err!=nil {
