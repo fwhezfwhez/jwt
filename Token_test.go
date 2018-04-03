@@ -24,7 +24,7 @@ func TestToken_JwtGenerator(t *testing.T) {
 
 func TestToken_Decode(t *testing.T) {
 	token := GetToken()
-	p, h, hs, err := token.Decode("eyJleHAiOiIxNTIyMzgxMTMwIiwicm9sZSI6ImFkbWluIiwidXNlck5hbWUiOiJhZG1pbiJ9.eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.4dQg8jhGCpDRB68+PFEt5o07strsovqIGEPDbqjrsIc=")
+	p, h, hs, err := token.Decode("eyJleHAiOiIxNTIyNzMzODQxIn0=.eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.fT+Om98vigWIyRcQRo0eQpg84yDsnBgJREcNZXjLg00=")
 	if err != nil {
 		t.Fatal(err)
 	}
@@ -42,3 +42,11 @@ func TestToken_IsLegal(t *testing.T) {
 	t.Log("是否合法：",legal)
 }
 
+func TestToken_BasicToken(t *testing.T) {
+	token := GetToken()
+	jwte,er:=token.BasicToken("hello")
+	if er!=nil{
+		t.Fatal(er)
+	}
+	t.Log(jwte)
+}

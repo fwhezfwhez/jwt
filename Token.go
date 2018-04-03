@@ -138,3 +138,15 @@ func(token *Token) IsLegal(jwt string,secretKey string) (bool,error){
 
 	return true,nil
 }
+
+//With Default values of payload and header
+func(token *Token) BasicToken(secret string) (string,error){
+	token.AddHeader("typ", "JWT").AddHeader("alg", "HS256")
+	exp :=time.Now().Add(2*time.Hour)
+	token.AddPayLoad("exp",strconv.FormatInt(exp.Unix(),10))
+	jwt,_,err:=token.JwtGenerator(secret)
+	if err!=nil{
+		return "",err
+	}
+	return jwt,nil
+}
