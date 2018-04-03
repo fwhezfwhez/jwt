@@ -13,20 +13,27 @@ import (
 )
 
 type Token struct {
-	payLoad map[string]string
-	header map[string]string
+	//Basic
+	payLoad map[string]string		//载荷 PayLoad
+	header map[string]string		//头信息 Header
 }
+
+//Get a token instance and alloc memory space for its components
 func GetToken() *Token{
 	token :=Token{}
 	token.payLoad = make(map[string]string)
 	token.header =make(map[string]string)
 	return &token
 }
+
+
+//Add payload
 func (token *Token) AddPayLoad(key string,value string) *Token{
 	token.payLoad[key]=value
 	return token
 }
 
+//Add header
 func (token *Token) AddHeader(key string,value string) *Token{
 	token.header[key]=value
 	return token
@@ -34,6 +41,7 @@ func (token *Token) AddHeader(key string,value string) *Token{
 
 
 //如果没设置失效，会默认设置一小时的有效期
+//if expired time not set , default 1 hour to expire
 func (token *Token)JwtGenerator(secretKey string) (jwtResult string,HS256Result string,errorThrow error){
 	//1.加密载荷
 	if token.payLoad["exp"]==""{
@@ -76,6 +84,7 @@ func (token *Token)JwtGenerator(secretKey string) (jwtResult string,HS256Result 
 	return jwt,HS256Rs,nil
 }
 
+//Decode a jwt string
 func (token *Token) Decode(jwt string) (payLoad map[string]string,header map[string]string,HS256Result string,err error){
 
 	jwtArr :=strings.Split(jwt,".")
@@ -103,7 +112,8 @@ func (token *Token) Decode(jwt string) (payLoad map[string]string,header map[str
 	return payLoadMap,headerMap,HS256Rs,nil
 }
 
-
+//Check jwt's legal or not
+//check info correct in the specific secret key,and check the expired time
 func(token *Token) IsLegal(jwt string,secretKey string) (bool,error){
 	p,h,hs,err :=token.Decode(jwt)
 	if err!=nil{
@@ -150,3 +160,4 @@ func(token *Token) BasicToken(secret string) (string,error){
 	}
 	return jwt,nil
 }
+
