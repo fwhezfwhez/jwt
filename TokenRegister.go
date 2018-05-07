@@ -74,6 +74,9 @@ func (tokenRegister *TokenRegister) Remove(jwt string, mapKey string) error {
 	return nil
 }
 
+func (tokenRegister *TokenRegister) Contains(JWTToken string) bool{
+	return listContains(tokenRegister.MemoryRegister,JWTToken)
+}
 //Observe used in en environment that keeps running or it may risk skipping
 func (tokenRegister *TokenRegister) Observe() {
 	//开启管理
@@ -102,4 +105,21 @@ func (tokenRegister *TokenRegister) Observe() {
 			time.Sleep(10 * time.Minute)
 		}
 	}()
+}
+
+
+
+func listContains(l *list.List,jwt string)bool{
+	if l.Len()==0 {
+		return false
+	}
+	var n *list.Element
+	for e := l.Front(); e != nil; e = n {
+		jTemp:= e.Value.(JWT).Jwt
+		if jTemp ==jwt{
+			return true
+		}
+		n = e.Next()
+	}
+	return false
 }
