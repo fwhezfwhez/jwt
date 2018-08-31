@@ -4,7 +4,10 @@ import (
 	"testing"
 	//"time"
 	//"strconv"
+//	"sync"
+//	"fmt"
 )
+
 func TestToken_JwtGenerator(t *testing.T) {
 	token := GetToken()
 	token.AddHeader("typ", "JWT").AddHeader("alg", "HS256")
@@ -19,18 +22,28 @@ func TestToken_JwtGenerator(t *testing.T) {
 	if err != nil {
 		t.Fatal(err)
 	}
-	t.Log("签名是:",jwt)
+	t.Log("签名是:", jwt)
 }
 
 func TestToken_Decode(t *testing.T) {
 	token := GetToken()
-	p, h, hs, err := token.Decode("eyJleHAiOiIxNTIyNzMzODQxIn0=.eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.fT+Om98vigWIyRcQRo0eQpg84yDsnBgJREcNZXjLg00=")
+	p, h, hs, err := token.Decode("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOiIxNTM1NzAxMjU3Iiwicm9sZSI6ImFkbWluIiwidXNlck5hbWUiOiJhZG1pbiJ9.5rXHJZ3KzKkuJHUqheSgKiHyh4ZQ7f5k0mGguIXyMR8=")
 	if err != nil {
 		t.Fatal(err)
 	}
-	t.Log("解出的payload:",p)
-	t.Log("解出的header",h)
-	t.Log("截出的HS256段",hs)
+	t.Log("解出的payload:", p)
+	t.Log("解出的header", h)
+	t.Log("截出的HS256段", hs)
+}
+func TestToken_DecodeCom(t *testing.T) {
+	token := GetToken()
+	p, h, hs, err := token.DecodeCom("eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0MzQsInJvbGUiOiJjb21tZXJjZSJ9.v9mBFXKTXABY_17rtk8qLv0CKQpY3VC_af6RKpqICl0")
+	if err != nil {
+		t.Fatal(err)
+	}
+	t.Log("解出的payload:", string(p))
+	t.Log("解出的header", string(h))
+	t.Log("截出的HS256段", hs)
 }
 
 func TestToken_IsLegal(t *testing.T) {
@@ -39,14 +52,23 @@ func TestToken_IsLegal(t *testing.T) {
 	if err != nil {
 		t.Fatal(err)
 	}
-	t.Log("是否合法：",legal)
+	t.Log("是否合法：", legal)
 }
 
 func TestToken_BasicToken(t *testing.T) {
 	token := GetToken()
-	jwte,er:=token.BasicToken("hello")
-	if er!=nil{
+	jwte, er := token.BasicToken("hello")
+	if er != nil {
 		t.Fatal(er)
 	}
 	t.Log(jwte)
 }
+
+func TestT(t *testing.T) {
+	t.Log(len("eyJ1c2VyX2lkIjozNjAwMDAwNDAsImV4cCI6MTUyOTQ2OTc3M30"))
+	t.Log(len("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9"))
+
+	t.Log(len("eyJleHAiOiIxNTI4ODY5MDQyIiwicm9sZSI6ImFkbWluIiwidXNlck5hbWUiOiJhZG1pbiJ9"))
+	t.Log(len("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9"))
+}
+

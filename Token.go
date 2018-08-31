@@ -68,7 +68,7 @@ func (token *Token)JwtGenerator(secretKey string) (jwtResult string,HS256Result 
 	//fmt.Println("Header的编码结果:",headerBase64)
 
 	//获得签名
-	signature := fmt.Sprintf("%s.%s",payLoadBase64,headerBase64)
+	signature := fmt.Sprintf("%s.%s",headerBase64,payLoadBase64)
 	//fmt.Println("签名是:",signature)
 
 	//加密签名
@@ -84,6 +84,29 @@ func (token *Token)JwtGenerator(secretKey string) (jwtResult string,HS256Result 
 	return jwt,HS256Rs,nil
 }
 
+//公共解码，payload和header解出[]byte,是map还是结构体自己判定
+func(token *Token)DecodeCom(jwt string)(payLoad []byte,header []byte,hscode string,e error){
+	jwtArr :=strings.Split(jwt,".")
+	if len(jwtArr)!=3{
+		return nil,nil,"",errors.New("jwt格式不正确，无法解码出三项")
+	}
+	headerStr := jwtArr[0]
+	payLoadStr := jwtArr[1]
+	HS256Rs := jwtArr[2]
+
+	payLoadByte,err := base64.StdEncoding.DecodeString(payLoadStr)
+	if err!=nil{
+		return nil,nil,"",err
+	}
+	headerByte,err := base64.StdEncoding.DecodeString(headerStr)
+	if err!=nil{
+		return nil,nil,"",err
+	}
+	return payLoadByte,headerByte,HS256Rs,nil
+}
+
+
+
 //Decode a jwt string
 func (token *Token) Decode(jwt string) (payLoad map[string]string,header map[string]string,HS256Result string,err error){
 
@@ -91,8 +114,8 @@ func (token *Token) Decode(jwt string) (payLoad map[string]string,header map[str
 	if len(jwtArr)!=3{
 		return nil,nil,"",errors.New("jwt格式不正确，无法解码出三项")
 	}
-	payLoadStr := jwtArr[0]
-	headerStr := jwtArr[1]
+	headerStr := jwtArr[0]
+	payLoadStr := jwtArr[1]
 	HS256Rs := jwtArr[2]
 
 	payLoadByte,err := base64.StdEncoding.DecodeString(payLoadStr)

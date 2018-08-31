@@ -17,6 +17,8 @@ type TokenRegister struct {
 
 	MemoryRegister    *list.List               //内存管理器，功能仿redis，性能更高效  memory redis alike however faster and more efficient
 	RegisterMemoryMap map[string]*list.Element //由于List在擦除时操作的对象是*Element而非interface{},所以需要该map来索引
+
+	RegisterMemoryMapArr map[string][]*list.Element
 	//a map that helps to index to remove an interface{}
 	MaxSize int //controls the max size of memoryRegister and registerMemoryMap
 }
@@ -28,6 +30,8 @@ func GetRegister(maxSize int) *TokenRegister {
 	tokenRegister.Token = GetToken()
 	tokenRegister.MemoryRegister = list.New()
 	tokenRegister.RegisterMemoryMap = make(map[string]*list.Element)
+
+
 	if maxSize < 1000 {
 		maxSize = 2000
 	}
