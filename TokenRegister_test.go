@@ -28,5 +28,6 @@ func TestTokenRegister_Register(t *testing.T) {
 func TestTokenRegister_Observe(t *testing.T) {
 	register := GetRegister(10)
 	register.Observe()
-	time.Sleep(10*time.Second)
+	var c  = make(chan int)
+	<-c
 }
